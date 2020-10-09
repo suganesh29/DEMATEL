@@ -31,15 +31,12 @@ class NumericDelegate(QStyledItemDelegate):
             validator = QRegExpValidator(reg_ex, editor)
             editor.setValidator(validator)
         return editor
-
-
-
+    
 class Ui_MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.check_change = True
        
-
     def closeEvent(self, event):
         reply = QMessageBox.question(self, 'Window Close', 'Are you sure you want to close the window?',
                 QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
@@ -75,11 +72,6 @@ class Ui_MainWindow(QWidget):
         if self.tableWidgetOutput.columnCount() > 0:
             self.tableWidgetOutput.removeColumn(self.tableWidgetOutput.columnCount()-1)
         print("Column size of the Matrix is Decreased")
-
-
-
-
-
 
     def click_me(self):
         rows  =  self.tableWidgetInput.rowCount()
@@ -246,7 +238,7 @@ class Ui_MainWindow(QWidget):
                 writer.writerow(ostr)
                 writer.writerow(RiMinusCi)
                 writer.writerow("\n")          
-    
+   
     
     def submit(self):
         global EnteredData,listi ,isize,iTabrow,iTabcol,rowData,TMatrix
@@ -266,8 +258,7 @@ class Ui_MainWindow(QWidget):
                 if it:
                     if it.text():
                         listi.append(it.text())
-            
-                     
+                           
         EnteredData= len(listi)
         if (EnteredData==isize):
             self.pushButton_submit.setEnabled(True)
@@ -403,13 +394,7 @@ class Ui_MainWindow(QWidget):
                 
         else:
             print("Please fill the input matrix ")
-           
-
   
-
-
-
-
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(2300, 1800)
@@ -524,16 +509,8 @@ class Ui_MainWindow(QWidget):
 "    border-style: solid;\n"
 "    border-radius: 2;\n"
 "}")
-
-
-
-
-        
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-
-       
-
 ################################INPUT  FRAME  ###################################################################################################################################################################################################
         self.frame1 = QtWidgets.QFrame(self.centralwidget)
         self.frame1.setGeometry(QtCore.QRect(30, 50, 2500, 2000))
@@ -559,11 +536,7 @@ class Ui_MainWindow(QWidget):
         delegate = NumericDelegate(self.tableWidgetInput)
         self.tableWidgetInput.setItemDelegate(delegate)
         self.tableWidgetInput.cellChanged.connect(self.cellcheck)
-
-
-      
-
-
+        
         self.verticalLayoutWidget = QtWidgets.QWidget(self.frame1)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(1600, 90, 121, 331))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
@@ -720,8 +693,7 @@ class Ui_MainWindow(QWidget):
         self.textEdit2.setFont(font)
         self.textEdit2.setReadOnly(True)
         self.tabWidget.addTab(self.tab2, "")
-
-
+        
         self.tab3 = QtWidgets.QWidget()
         self.tab3.setObjectName("tab3")
         self.textEdit3 = QtWidgets.QTextEdit(self.tab3)
@@ -730,8 +702,6 @@ class Ui_MainWindow(QWidget):
         self.textEdit3.setFont(font)
         self.textEdit3.setReadOnly(True)
         self.tabWidget.addTab(self.tab3, "")
-
-
 
         self.tab4 = QtWidgets.QWidget()
         self.tab4.setObjectName("tab4")
@@ -814,13 +784,7 @@ class Ui_MainWindow(QWidget):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-
-    
-
-
-        
-
+   
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -863,9 +827,7 @@ class Ui_MainWindow(QWidget):
         self.actionPaste.setText(_translate("MainWindow", "Paste"))
         self.actionPaste.setStatusTip(_translate("MainWindow", "Paste the data"))
         self.actionPaste.setShortcut(_translate("MainWindow", "Ctrl+V"))
-
         self.actionClose.setText(_translate("MainWindow", "Close"))'''
-
 
 if __name__ == "__main__":
     import sys
